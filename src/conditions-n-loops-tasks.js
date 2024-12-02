@@ -21,8 +21,8 @@
  *  0  => true
  *  -5 => false
  */
-function isPositive(/* number */) {
-  throw new Error('Not implemented');
+function isPositive(number) {
+  return number >= 0;
 }
 
 /**
@@ -38,8 +38,14 @@ function isPositive(/* number */) {
  *  -5, 0, 5      => 5
  *  -0.1, 0, 0.2  => 0.2
  */
-function getMaxNumber(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getMaxNumber(a, b, c) {
+  if (a > b && a > c) {
+    return a;
+  }
+  if (b > a && b > c) {
+    return b;
+  }
+  return c;
 }
 
 /**
@@ -102,6 +108,16 @@ function isIsoscelesTriangle(/* a, b, c */) {
  */
 function convertToRomanNumerals(/* num */) {
   throw new Error('Not implemented');
+  // let number = num;
+  // const romans = { X: 10, IX: 9, V: 5, IV: 4, I: 1 };
+  // let res = '';
+  // for (key in romans) {
+  //   while (number >= romans[key]) {
+  //     res += key;
+  //     number -= romans[key];
+  //   }
+  // }
+  // return res;
 }
 
 /**
@@ -137,6 +153,14 @@ function convertNumberToString(/* numberStr */) {
  */
 function isPalindrome(/* str */) {
   throw new Error('Not implemented');
+  // const words = { "0": "zero", "1": "one", "2": "two", "3": "three", "4": "four", "5": "five", "6": "six", "7": "seven", "8": "eight", "9": "nine", "." : "point", "-": "minus", "," : "point" };
+  // let res = '';
+  // for (const key in words) {
+  //     if(numberStr.inсludes(key)) {
+  //       console.log(key)
+  //     }
+  // }
+  // return res;
 }
 
 /**
@@ -153,8 +177,11 @@ function isPalindrome(/* str */) {
  *  'qwerty', 'Q'     => -1
  *  'qwerty', 'p'     => -1
  */
-function getIndexOf(/* str, letter */) {
-  throw new Error('Not implemented');
+function getIndexOf(str, letter) {
+  for (let i = 0; i < str.length; i += 1) {
+    if (str[i] === letter) return i;
+  }
+  return -1;
 }
 
 /**
@@ -172,8 +199,12 @@ function getIndexOf(/* str, letter */) {
  *  12345, 0    => false
  *  12345, 6    => false
  */
-function isContainNumber(/* num, digit */) {
-  throw new Error('Not implemented');
+function isContainNumber(num, digit) {
+  const str = String(num);
+  for (let i = 0; i < str.length; i += 1) {
+    if (str[i] === String(digit)) return true;
+  }
+  return false;
 }
 
 /**
