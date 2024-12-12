@@ -217,16 +217,13 @@ function convertNumberToString(numberStr) {
  *  '0123210'   => true
  *  'qweqwe'    => false
  */
-function isPalindrome(/* str */) {
-  throw new Error('Not implemented');
-  // const words = { "0": "zero", "1": "one", "2": "two", "3": "three", "4": "four", "5": "five", "6": "six", "7": "seven", "8": "eight", "9": "nine", "." : "point", "-": "minus", "," : "point" };
-  // let res = '';
-  // for (const key in words) {
-  //     if(numberStr.inсludes(key)) {
-  //       console.log(key)
-  //     }
-  // }
-  // return res;
+function isPalindrome(str) {
+  let res = '';
+  for (let i = 0; i <= str.length; i += 1) {
+    const len = str.length - 1;
+    res += i !== str.length ? str[len - i] : '';
+  }
+  return res === str;
 }
 
 /**
