@@ -324,6 +324,16 @@ function getBalanceIndex(arr) {
  */
 function getSpiralMatrix(/* size */) {
   throw new Error('Not implemented');
+  // const res = []
+  //  let n = 1;
+  //  for (let i = 0; i < size; i++) {
+  //      res[i] = []
+  //      for (let j = 0; j < size; j++) {
+  //          res[i][j] = n
+  //          n++
+  //      }
+  //  }
+  //  return res
 }
 
 /**
@@ -343,6 +353,19 @@ function getSpiralMatrix(/* size */) {
  */
 function rotateMatrix(/* matrix */) {
   throw new Error('Not implemented');
+  // const arr = matrix;
+  // const len = matrix.length;
+  // for (let i = 0; i < len; i += 1) {
+  //   for (let j = 0; j < len; j += 1) {
+  //     arr[j][len - i - 1] = matrix[i][j];
+  //   }
+  // }
+  // for (let i = 0; i < len; i += 1) {
+  //   for (let j = i + 1; j < len; j += 1) {
+  //     [arr[i][j], arr[j][i]] = [arr[j][i], arr[i][j]];
+  //   }
+  // }
+  // return matrix;
 }
 
 /**
@@ -359,8 +382,21 @@ function rotateMatrix(/* matrix */) {
  *  [2, 9, 5, 9]    => [2, 5, 9, 9]
  *  [-2, 9, 5, -3]  => [-3, -2, 5, 9]
  */
-function sortByAsc(/* arr */) {
-  throw new Error('Not implemented');
+function sortByAsc(arr) {
+  const arrCopy = arr;
+  const len = arr.length;
+  for (let i = 0; i < len - 1; i += 1) {
+    let minIndex = i;
+    for (let j = i + 1; j < len; j += 1) {
+      if (arr[j] < arr[minIndex]) minIndex = j;
+    }
+    if (minIndex !== i) {
+      const temp = arr[i];
+      arrCopy[i] = arr[minIndex];
+      arrCopy[minIndex] = temp;
+    }
+  }
+  return arr;
 }
 
 /**
